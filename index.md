@@ -20,7 +20,7 @@ Here you can try stuff:
     function decode() {
         for (message in messages) {
             try {
-                decoded = sjcl.decrypt(document.getElementById("passphrase").value, message);
+                decoded = sjcl.decrypt(document.getElementById("passphrase").value, messages[message]);
                 if (decoded.startsWith("::::")) {
                     document.getElementById("result").innerHTML = decoded.slice(4);
                 }

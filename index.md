@@ -16,10 +16,11 @@ Here you can try stuff:
         "{\"iv\":\"aEFeOIFuNIKOkbILWfZLTQ==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"MytVoz5kRnQ=\",\"ct\":\"92qtqLg3QM6DuyE5X+wkG2ze+T1poSv88urEJ7OUhlTGxRWbDWXDwm6fO2XyuYp5zVe/OhFGS7/ENeYupASAilJh\"}",
         "{\"iv\":\"ExEh/3hbN5f+yVPO7drFIg==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"dA738N6INl4=\",\"ct\":\"wv2UIHUM0hSeNaw/buzCx8d99YFLLUJcvJlyvXFxRV3Refbi9ybMKY3QtnSW4dRIhSryTVjq9XOSGv8J5oH07ExA1B9Wr+RkSBQcFbGsHxlQo2pYuGJ4S3NSZuwFAqxo2v9D62Lw6djQ4+QFUUAk7hCuNoKPUw==\"}",
         ]
+    let decoded = ""
     function decode() {
         for (message in messages) {
             try {
-                let decoded = sjcl.decrypt(document.getElementById("passphrase").value, message);
+                decoded = sjcl.decrypt(document.getElementById("passphrase").value, message);
                 if (decoded.startsWith("::::")) {
                     document.getElementById("result").innerHTML = decoded.slice(4);
                 }

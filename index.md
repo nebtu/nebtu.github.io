@@ -20,10 +20,11 @@ Here you can try stuff:
         for (message in messages) {
             try {
                 let decoded = sjcl.decrypt(document.getElementById("passphrase").value, message);
-            };
-            if (decoded.startsWith("::::")) {
-                document.getElementById("result").innerHTML = decoded.slice(4);
+                if (decoded.startsWith("::::")) {
+                    document.getElementById("result").innerHTML = decoded.slice(4);
+                }
             }
+            catch {}
         }
     };
 </script>

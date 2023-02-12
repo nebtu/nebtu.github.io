@@ -18,7 +18,9 @@ Here you can try stuff:
         ]
     function decode() {
         for (message in messages) {
-            let decoded = sjcl.decrypt(document.getElementById("passphrase").value, message);
+            try {
+                let decoded = sjcl.decrypt(document.getElementById("passphrase").value, message);
+            };
             if (decoded.startsWith("::::")) {
                 document.getElementById("result").innerHTML = decoded.slice(4);
             }
